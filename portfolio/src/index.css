@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@font-face{
+    font-family: 'cs_gordon';
+    src: url('./assets/fonts/cs_gordon.ttf') format('truetype');
+}
+
+@theme{
+    --font-gordon: 'cs_gordon';
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-alata: 'Alata', sans-serif;
+}
+/* Starting position wrapper classes */
+.reveal-element {
+  opacity: 0;
+  transform: translateY(-25px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+/* Active animated configuration class */
+.reveal-element.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Custom incremental speed delays */
+.delay-75 { transition-delay: 75ms; }
+.delay-150 { transition-delay: 150ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-450 { transition-delay: 450ms; }
