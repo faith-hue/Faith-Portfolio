@@ -1,7 +1,6 @@
 import React from 'react';
 
 export const Footer: React.FC = () => {
-  const currentYear = new Date().getFullYear();
 
   const handleNavClick = (link: string) => {
     document.getElementById(link.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
@@ -20,14 +19,15 @@ export const Footer: React.FC = () => {
             <span>Faith</span>
             <span className="text-[#E20098]">Portfolio</span>
           </div>
-        
+          
+      
         </div>
 
         {/* Right Side: Social Media Icons */}
         <div className="flex items-center space-x-6">
           {/* GitHub */}
           <a
-            href="https://github.com"
+            href="https://github.com/faith-hue"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/50 hover:text-[#A855F7] transition-all duration-200 hover:-translate-y-0.5"
@@ -40,7 +40,7 @@ export const Footer: React.FC = () => {
 
           {/* LinkedIn */}
           <a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/faith-ysabelle-del-rosario/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/50 hover:text-[#A855F7] transition-all duration-200 hover:-translate-y-0.5"
@@ -53,7 +53,7 @@ export const Footer: React.FC = () => {
 
           {/* Email */}
           <a
-            href="mailto:youremail@example.com"
+            href="mailto:faithysabelleee@gmail.com"
             className="text-white/50 hover:text-[#A855F7] transition-all duration-200 hover:-translate-y-0.5"
             aria-label="Send Email"
           >
