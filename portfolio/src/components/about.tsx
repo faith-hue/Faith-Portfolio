@@ -53,7 +53,7 @@ export const About: React.FC = () => {
           <h2 className="text-5xl sm:text-6xl font-cs_gordon font-black uppercase tracking-tight text-[#E20098]">
             What I Do
           </h2>
-          <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed max-w-5xl tracking-wide font-montserrat font-normal">
+          <p className="text-gray-300 text-base  leading-relaxed max-w-5xl tracking-wide font-montserrat font-normal">
             A Computer Science student specializing in Frontend Development and UI/UX Design, with 
             experience in software quality assurance and technical documentation. Skilled in creating branding 
             assets and high-fidelity prototypes using Figma and Canva, and developing responsive web and 
@@ -84,10 +84,10 @@ export const About: React.FC = () => {
                     <h4 className="text-lg font-bold tracking-wide text-[#F5E1E6] group-hover:text-[#A855F7] transition-colors duration-200">
                       {exp.role}
                     </h4>
-                    <p className="text-sm font-montserrat font-medium text-[#B8C4D9]">
+                    <p className="text-base font-montserrat font-medium text-[#B8C4D9]">
                       {exp.institution}
                     </p>
-                    <p className="text-xs sm:text-sm text-gray-300 font-normal leading-relaxed pt-1">
+                    <p className="text-sm sm:text-sm text-gray-300 font-normal leading-relaxed pt-1">
                       {exp.details}
                     </p>
                   </div>

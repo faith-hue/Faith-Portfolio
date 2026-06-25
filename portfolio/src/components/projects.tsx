@@ -20,15 +20,15 @@ export const Projects: React.FC = () => {
   useScrollReveal();
 
   const projectData: ProjectItem[] = [
-    {
-      id: 1,
-      title: 'Institute of Arts and Design Website',
-      category: 'Website',
-      description: 'Designed and developed a website to showcase the creative works and academic offerings of the Institute of Arts and Design, providing an engaging platform for students, faculty, and visitors to explore the vibrant world of art and design education.',
-      imageUrl: 'images/iad.png',
-      status: 'Deployed',
-      liveUrl: 'https://iadcreatives.com/', 
-    },
+    // {
+    //   id: 1,
+    //   title: 'Institute of Arts and Design Website',
+    //   category: 'Website',
+    //   description: 'Designed and developed a website to showcase the creative works and academic offerings of the Institute of Arts and Design, providing an engaging platform for students, faculty, and visitors to explore the vibrant world of art and design education.',
+    //   imageUrl: 'images/iad.png',
+    //   status: 'Deployed',
+    //   liveUrl: 'https://iadcreatives.com/', 
+    // },
     {
       id: 2,
       title: 'UMak Educational Foundation Website',
