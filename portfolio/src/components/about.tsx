@@ -33,14 +33,8 @@ export const About: React.FC = () => {
     {
       role: 'WordPress Website Developer',
       institution: 'Institute of Arts and Design (IAD)',
-      duration: 'Jan 2025 - May 2026',
-      details: 'Developed and deployed a WordPress website using Greenshift and Popup Maker, transforming requirements into a functional and user-friendly platform while enhancing accessibility and overall user experience. Designed UI prototypes in Figma and performed website maintenance and optimization, improving design consistency, performance stability, and cross-page user experience.'
-    },
-    {
-      role: 'WordPress Website Developer',
-      institution: 'UMak Educational Foundation (UMEDFI)',
       duration: 'Aug 2025 - May 2026',
-      details: 'Re-developed and deployed a multi-page WordPress website by translating stakeholder requirements into functional user-facing features, improving accessibility, usability, and overall system reliability. Managed website maintenance, feature enhancements, and technical documentation, enhancing system stability, scalability, and long-term project delivery support.'
+      details: 'Developed and deployed a WordPress website using Greenshift and Popup Maker, transforming requirements into a functional and user-friendly platform while enhancing accessibility and overall user experience. Designed UI prototypes in Figma and performed website maintenance and optimization, improving design consistency, performance stability, and cross-page user experience.'
     }
   ];
 
