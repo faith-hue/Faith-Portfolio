@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ProjectModal } from './ProjectModal';
-import { useScrollReveal } from '../hooks/useScrollReveal'; // 1. Import your scroll trigger hook
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 interface ProjectItem {
   id: number;
@@ -9,26 +9,25 @@ interface ProjectItem {
   description: string;
   imageUrl: string;
   carouselImages?: string[];
-  status?: 'Deployed' | 'In Progress' | 'Completed';
+  status?: 'Deployed' | 'In Progress' | 'Completed' | 'Under Maintenance';
   liveUrl?: string;
 }
 
 export const Projects: React.FC = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
 
-  // 2. Initialize the scroll observer engine coordinates
   useScrollReveal();
 
   const projectData: ProjectItem[] = [
-    // {
-    //   id: 1,
-    //   title: 'Institute of Arts and Design Website',
-    //   category: 'Website',
-    //   description: 'Designed and developed a website to showcase the creative works and academic offerings of the Institute of Arts and Design, providing an engaging platform for students, faculty, and visitors to explore the vibrant world of art and design education.',
-    //   imageUrl: 'images/iad.png',
-    //   status: 'Deployed',
-    //   liveUrl: 'https://iadcreatives.com/', 
-    // },
+    {
+      id: 1,
+      title: 'Institute of Arts and Design Website',
+      category: 'Website',
+      description: 'Designed and developed a website to showcase the creative works and academic offerings of the Institute of Arts and Design, providing an engaging platform for students, faculty, and visitors to explore the vibrant world of art and design education.',
+      imageUrl: 'images/iad.png',
+      carouselImages: [ 'videos/iad_preview.mp4' ],
+      status: 'Under Maintenance',
+    },
     {
       id: 2,
       title: 'UMak Educational Foundation Website',
@@ -51,7 +50,7 @@ export const Projects: React.FC = () => {
       id: 4,
       title: 'JotterPal',
       category: 'Android Application',
-      description: 'A task and note management application designed to help users capture and organize their tasks, thoughts, and ideas in a simple and intuitive way.',
+      description: 'Designed and developed a task and note management application to help users capture and organize their tasks, thoughts, and ideas in a simple and intuitive way.',
       imageUrl: 'images/jotterpal.png',
       carouselImages: [ 'images/Slide 1.png', 'images/Slide 2.png', 'images/Slide 3.png', 'images/Create Account Screen 1.png','images/Login Screen.png', 'images/Home.png', 'images/Tasks Screen(On-going).png', 'images/Create Task Screen.png', 'images/Folder List (Create Folder).png', 'images/Add Image.png', 'images/Profile (1).png', 'images/Notification.png'],
       status: 'Completed',
@@ -60,7 +59,7 @@ export const Projects: React.FC = () => {
       id: 5,
       title: 'Bookify',
       category: 'Desktop Application',
-      description: 'A desktop application designed to help users manage their book collections, track reading progress, and discover new books based on their interests.',
+      description: 'Designed and developed a desktop application to help users manage their book collections, track reading progress, and discover new books based on their interests.',
       imageUrl: 'images/Bookify.png',
       carouselImages: [ 'images/Log in.png', 'images/Dashboard.png', 'images/Books.png', 'images/Student Borrowers.png', 'images/Teacher Borrowers.png', 'images/Issue Book.png' ],
       status: 'Completed',
@@ -71,7 +70,7 @@ export const Projects: React.FC = () => {
     <div className="w-full min-h-screen bg-[#1F1235] text-white px-6 sm:px-12 lg:px-20 py-24 flex items-center relative">
       <div className="max-w-6xl mx-auto w-full space-y-12">
         
-        {/* Section Heading (Added reveal-element) */}
+        {/* Section Heading */}
         <div className="space-y-1 reveal-element">
           <h2 className="text-5xl sm:text-6xl font-cs_gordon font-black uppercase tracking-tight text-[#E20098]">
             Projects
@@ -81,7 +80,7 @@ export const Projects: React.FC = () => {
           </p>
         </div>
 
-        {/* Project Cards Grid (Added reveal-element and delay-150) */}
+        {/* Project Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 pt-4 reveal-element delay-150">
           {projectData.map((project) => (
             <div
@@ -106,21 +105,23 @@ export const Projects: React.FC = () => {
                       {project.title}
                     </h3>
                     
-                    <div className="flex items-center gap-2">
-                      {project.status && (
-                        <span className={`px-2.5 py-0.5 rounded-xl text-xs font-bold tracking-wide border ${
-                          project.status === 'Deployed' 
-                            ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
-                            : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
-                        }`}>
-                          {project.status}
-                        </span>
-                      )}
+              <div className="flex items-center gap-2">
+                {project.status && (
+                  <span className={`px-2.5 py-0.5 rounded-xl text-xs font-bold tracking-wide border ${
+                    project.status === 'Deployed' 
+                      ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+                      : project.status === 'Under Maintenance'
+                      ? 'bg-sky-500/10 text-sky-400 border-sky-500/20' // Sleek Blue for maintenance
+                      : 'bg-amber-500/10 text-amber-400 border-amber-500/20' // Amber/Yellow for In Progress
+                  }`}>
+                    {project.status}
+                  </span>
+                )}
 
-                      <span className="px-3 py-0.5 rounded-xl text-xs font-semibold tracking-wide border bg-white/5 border-white/10 text-purple-300">
-                        {project.category}
-                      </span>
-                    </div>
+                <span className="px-3 py-0.5 rounded-xl text-xs font-semibold tracking-wide border bg-white/5 border-white/10 text-purple-300">
+                  {project.category}
+                </span>
+              </div>
                   </div>
 
                   <p className="text-gray-400 text-sm leading-relaxed font-normal line-clamp-2">

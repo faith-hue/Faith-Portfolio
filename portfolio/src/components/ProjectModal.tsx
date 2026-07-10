@@ -7,7 +7,7 @@ interface ProjectItem {
   description: string;
   imageUrl: string;
   carouselImages?: string[];
-  status?: 'Deployed' | 'In Progress' | 'Completed';
+  status?: 'Deployed' | 'In Progress' | 'Completed' | 'Under Maintenance';
   liveUrl?: string;
 }
 
@@ -20,6 +20,10 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides = project.carouselImages || [project.imageUrl];
+  const activeMediaUrl = slides[currentSlide];
+  
+  // Dynamic string check to detect video formats (.mp4) inside the slideshow track array
+  const isVideo = activeMediaUrl.endsWith('.mp4');
 
   const nextSlide = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -52,30 +56,46 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         </button>
 
         {/* Left Side: Carousel Slider Frame */}
-        <div className="w-full aspect-[4/3] md:h-full bg-black/60 relative flex items-center justify-center group/slider border-b md:border-b-0 md:border-r border-white/5 p-4">
-          <img 
-            src={slides[currentSlide]} 
-            alt={`${project.title} slide view`}
-            className="max-w-full max-h-full object-contain select-none transition-all duration-300 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
-          />
+        <div className="w-full aspect-[4/3] md:h-full bg-black/60 relative flex items-center justify-center group/slider border-b md:border-b-0 md:border-r border-white/5 p-4 min-h-[300px] md:min-h-[400px]">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/5 to-transparent z-0" />
+          
+          {/* Render video container layout conditionally, otherwise fall back to image element rendering */}
+          {isVideo ? (
+            <video
+              key={activeMediaUrl} // Re-mounts node properly on track slides shift change triggers
+              src={activeMediaUrl}
+              className="max-w-full max-h-full object-contain select-none z-10 rounded-xl drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+              autoPlay
+              loop
+              muted
+              controls
+              playsInline
+            />
+          ) : (
+            <img 
+              src={activeMediaUrl} 
+              alt={`${project.title} slide view`}
+              className="max-w-full max-h-full object-contain select-none transition-all duration-300 drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] z-10"
+            />
+          )}
 
           {slides.length > 1 && (
             <>
               <button 
                 onClick={prevSlide}
-                className="absolute left-3 p-2 rounded-full bg-[#1A102F]/80 text-white border border-white/10 hover:text-[#A855F7] transition-all cursor-pointer opacity-80 md:opacity-0 md:group-hover/slider:opacity-100 z-20"
+                className="absolute left-3 p-2 rounded-full bg-[#1A102F]/80 text-white border border-white/10 hover:text-[#A855F7] transition-all cursor-pointer opacity-80 md:opacity-0 md:group-hover/slider:opacity-100 z-20 shadow-md"
               >
                 ←
               </button>
               <button 
                 onClick={nextSlide}
-                className="absolute right-3 p-2 rounded-full bg-[#1A102F]/80 text-white border border-white/10 hover:text-[#A855F7] transition-all cursor-pointer opacity-80 md:opacity-0 md:group-hover/slider:opacity-100 z-20"
+                className="absolute right-3 p-2 rounded-full bg-[#1A102F]/80 text-white border border-white/10 hover:text-[#A855F7] transition-all cursor-pointer opacity-80 md:opacity-0 md:group-hover/slider:opacity-100 z-20 shadow-md"
               >
                 →
               </button>
 
               {/* Dots Indicators */}
-              <div className="absolute bottom-4 flex gap-1.5 z-20">
+              <div className="absolute bottom-4 flex gap-1.5 z-20 bg-[#1A102F]/40 backdrop-blur-xs px-3 py-1.5 rounded-full border border-white/5">
                 {slides.map((_, index) => (
                   <span 
                     key={index} 
@@ -97,7 +117,11 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 {project.category}
               </span>
               {project.status && (
-                <span className="px-2.5 py-0.5 rounded-xl text-xs font-bold tracking-wide border bg-amber-500/10 text-amber-400 border-amber-500/20">
+                <span className={`px-2.5 py-0.5 rounded-xl text-xs font-bold tracking-wide border ${
+                  project.status === 'Deployed'
+                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
+                    : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
+                }`}>
                   {project.status}
                 </span>
               )}
