@@ -118,10 +118,12 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               </span>
               {project.status && (
                 <span className={`px-2.5 py-0.5 rounded-xl text-xs font-bold tracking-wide border ${
-                  project.status === 'Deployed'
-                    ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20'
-                    : 'bg-amber-500/10 text-amber-400 border-amber-500/20'
-                }`}>
+                    project.status === 'Deployed' 
+                      ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' 
+                      : project.status === 'Under Maintenance'
+                      ? 'bg-sky-500/10 text-sky-400 border-sky-500/20' // Sleek Blue for maintenance
+                      : 'bg-amber-500/10 text-amber-400 border-amber-500/20' // Amber/Yellow for In Progress
+                  }`}>
                   {project.status}
                 </span>
               )}
