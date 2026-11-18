@@ -10,15 +10,25 @@ export const About: React.FC = () => {
   ];
 
   const qaSkills = [
-    'API Test', 'Functional Testing', 'Regression Testing', 
-    'Test Case Design', 'Bug Reporting', 'SDLC', 'Jira', 'Confluence', 'JMeter', 'Postman'
+    'Manual Software Testing',
+    'Functional Testing',
+    'Regression Testing',
+    'Integration Testing',
+    'User Acceptance Testing (UAT)',
+    'Non-Functional Testing',
+    'Performance Testing',
+    'Cross-Browser Testing',
+    'Responsive Testing',
+    'Bug Verification',
+    'Defect Tracking',
+    'Test Execution'
   ];
 
   const education = [
     {
       role: 'Bachelor of Science in Computer Science',
       institution: 'University of Makati',
-      duration: 'Expected Graduation: 2026',
+      duration: 'Aug 2022 - Aug 2026',
       details: 'Specializing in Application Development. Actively working on academic research, software projects, and automated system optimizations.'
     }
   ];
@@ -28,13 +38,13 @@ export const About: React.FC = () => {
       role: 'Software Developer Intern',
       institution: 'ORTADEL Technologies Corporation',
       duration: 'Feb 2026 – May 2026',
-      details: 'Designed high-fidelity UI/UX prototypes in Figma and developed responsive React and Tailwind CSS components for HRIS Leave Management and Payroll modules, improving requirement validation, system functionality, and frontend scalability. Conducted functional, regression, and smoke testing while producing comprehensive QA documentation, identifying critical defects and enhancing system stability and deployment readiness.'
+      details: 'Designed high-fidelity Figma prototypes for HRIS modules and collaborated with developers in Agile workflows to support efficient feature implementation and delivery. Conducted UI/functional validation against design specifications and investigated, documented, and resolved post-deployment defects to improve application quality and stability.'
     },
     {
       role: 'WordPress Website Developer',
       institution: 'Institute of Arts and Design (IAD)',
       duration: 'Aug 2025 - May 2026',
-      details: 'Developed and deployed a WordPress website using Greenshift and Popup Maker, transforming requirements into a functional and user-friendly platform while enhancing accessibility and overall user experience. Designed UI prototypes in Figma and performed website maintenance and optimization, improving design consistency, performance stability, and cross-page user experience.'
+      details: 'Designed and developed a responsive WordPress website, enhancing usability, accessibility, and visual consistency across user-facing pages. Conducted website testing, maintenance, and iterative improvements based on stakeholder feedback, while preparing handover documentation to support knowledge transfer and ongoing website management.'
     }
   ];
 
@@ -48,13 +58,10 @@ export const About: React.FC = () => {
             What I Do
           </h2>
           <p className="text-gray-300 text-base  leading-relaxed max-w-5xl tracking-wide font-montserrat font-normal">
-            A Computer Science student specializing in Frontend Development and UI/UX Design, with 
-            experience in software quality assurance and technical documentation. Skilled in creating branding 
-            assets and high-fidelity prototypes using Figma and Canva, and developing responsive web and 
-            mobile applications using React, Tailwind CSS, WordPress, and Kotlin. Experienced in business 
-            requirements analysis, software testing, and project documentation throughout the Software 
-            Development Lifecycle (SDLC), with a strong focus on delivering user-centered and reliable digital 
-            solutions.
+          Aspiring Software Quality Assurance professional with hands-on experience in manual software testing, test case design and execution, defect identification, bug verification, and test documentation. 
+          Knowledgeable in SDLC and STLC methodologies, with practical experience conducting functional, regression, integration, performance, and cross-browser testing. Proficient in documenting test results, tracking defects, and collaborating with developers throughout the software development lifecycle. 
+          Detail-oriented and analytical, with a strong commitment to delivering reliable, functional, and user-centered software applications.
+
           </p>
         </div>
 

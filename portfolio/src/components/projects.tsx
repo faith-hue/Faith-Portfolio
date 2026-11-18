@@ -76,7 +76,7 @@ export const Projects: React.FC = () => {
             Projects
           </h2>
           <p className="text-[#FCE4EC] text-xs sm:text-sm font-medium tracking-widest uppercase opacity-80">
-            Where Ideas Are Made To Life
+            A showcase of my work, highlighting my skills and expertise in Quality Assurance and Software Development.
           </p>
         </div>
 

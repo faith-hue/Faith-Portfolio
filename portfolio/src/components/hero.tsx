@@ -33,9 +33,7 @@ export const Hero: React.FC = () => {
           <div className="text-sm sm:text-base md:text-lg font-montserrat font-medium tracking-wide text-white/80 flex flex-wrap items-center gap-x-3 gap-y-1.5 reveal-element delay-75">
             <span>UI/UX Designer</span>
             <span className="text-white/30 hidden sm:inline">|</span>
-            <span>Front End Developer</span>
-            <span className="text-white/30 hidden sm:inline">|</span>
-            <span>Software QA</span>
+            <span>Software Quality Assurance</span>
           </div>
 
           {/* Action Buttons & Socials Row (Slides down with a 150ms stagger delay) */}
