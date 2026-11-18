@@ -8,7 +8,7 @@ export const Navbar: React.FC = () => {
   // Track if a tab click triggered a scroll to temporarily ignore observer updates
   const isClickScrolling = useRef(false);
 
-  const navLinks = ['Home', 'About', 'Projects'];
+  const navLinks = ['Home', 'About', 'Projects', 'Certifications'];
 
   useEffect(() => {
     // 1. Changes navbar background opacity on scroll
@@ -91,7 +91,7 @@ export const Navbar: React.FC = () => {
           onClick={() => handleNavClick('Home')}
         >
           <span className="text-[#F5E1E6]">Faith</span>
-          <span className="text-[#E20098]">Portfolio</span>
+          <span className="text-[#E20098]">Ysabelle</span>
         </div>
 
         {/* Desktop Navigation Links */}

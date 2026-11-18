@@ -2,7 +2,8 @@ import { Navbar } from './components/navbar';
 import { Hero } from './components/hero';  
 import { About } from './components/about';  
 import { Projects } from './components/projects';
-import { Footer } from './components/Footer'; // 1. Import your new Footer component
+import { Footer } from './components/Footer'; 
+import { Certification } from './components/certification';
 import './App.css';
 
 function App() {
@@ -33,6 +34,10 @@ function App() {
       {/* Projects Section */}
       <section id="projects">
         <Projects />
+      </section>
+
+      <section id="certifications">
+        <Certification />
       </section>
 
       {/* 2. Mount your clean, matching Footer section right here */}

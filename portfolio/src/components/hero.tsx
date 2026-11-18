@@ -13,7 +13,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <div className="w-full min-h-screen text-white px-6 sm:px-12 lg:px-20 py-24 flex items-center relative">
+    <div className="w-full min-h-screen text-white px-6 sm:px-12 lg:px-20 py-24 flex items-center">
       <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
         
         {/* Left Column: Text Content */}
@@ -96,20 +96,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Column: Profile Image (Slides down with a 300ms stagger delay) */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end items-center relative h-full min-h-[350px] lg:min-h-[450px] reveal-element delay-300">
-          <div className="relative w-64 sm:w-80 md:w-96 lg:w-full max-w-md aspect-[4/5] flex items-end justify-center">
-            
-            {/* The Border & Backing Frame Layer */}
-            <div className="absolute bottom-0 w-full h-full rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm shadow-[0_0_30px_rgba(168,85,247,0.15)] pointer-events-none z-0" />
-            
-            <img
-              src="Faith.png" 
-              alt="Faith Del Rosario"
-              className="w-[90%] max-h-[105%] h-auto object-contain object-bottom block drop-shadow-[0_20px_40px_rgba(0,0,0,0.6)] select-none pointer-events-none z-10 relative bottom-0"
-            />
-          </div>
-        </div>
-
+   
       </div>
     </div>
   );

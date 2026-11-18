@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
             onClick={() => handleNavClick('home')}
           >
             <span>Faith</span>
-            <span className="text-[#E20098]">Portfolio</span>
+            <span className="text-[#E20098]">Ysabelle</span>
           </div>
           
       
